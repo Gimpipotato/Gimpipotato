@@ -20,28 +20,22 @@
     <div class="container">
         <section id="hikes" class="section">
             <h2>Hikes</h2>
-            <div class="dropdown">
-                <button class="dropbtn">Mountain Hikes</button>
-                <div class="dropdown-content">
-                    <a href="#">Mountain Hike 1</a>
-                    <a href="#">Mountain Hike 2</a>
-                    <a href="#">Mountain Hike 3</a>
+            <div class="hike-category">
+                <div class="hike-button">
+                    <img src="ireland.jpg" alt="Hikes in Ireland" class="hike-image">
+                    <div class="dropdown-content">
+                        <a href="#">Hike in Ireland 1</a>
+                        <a href="#">Hike in Ireland 2</a>
+                        <a href="#">Hike in Ireland 3</a>
+                    </div>
                 </div>
-            </div>
-            <div class="dropdown">
-                <button class="dropbtn">Forest Hikes</button>
-                <div class="dropdown-content">
-                    <a href="#">Forest Hike 1</a>
-                    <a href="#">Forest Hike 2</a>
-                    <a href="#">Forest Hike 3</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <button class="dropbtn">Desert Hikes</button>
-                <div class="dropdown-content">
-                    <a href="#">Desert Hike 1</a>
-                    <a href="#">Desert Hike 2</a>
-                    <a href="#">Desert Hike 3</a>
+                <div class="hike-button">
+                    <img src="abroad.jpg" alt="Hikes Abroad" class="hike-image">
+                    <div class="dropdown-content">
+                        <a href="#">Hike Abroad 1</a>
+                        <a href="#">Hike Abroad 2</a>
+                        <a href="#">Hike Abroad 3</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -50,16 +44,15 @@
         <p>&copy; 2024 Bob Jeff. All rights reserved.</p>
     </footer>
     <script>
-        // Optional JavaScript for more complex dropdown behavior
-        document.querySelectorAll('.dropbtn').forEach(button => {
+        document.querySelectorAll('.hike-button').forEach(button => {
             button.addEventListener('click', () => {
-                const dropdownContent = button.nextElementSibling;
+                const dropdownContent = button.querySelector('.dropdown-content');
                 dropdownContent.classList.toggle('show');
             });
         });
 
         window.onclick = function(event) {
-            if (!event.target.matches('.dropbtn')) {
+            if (!event.target.matches('.hike-image')) {
                 document.querySelectorAll('.dropdown-content').forEach(content => {
                     if (content.classList.contains('show')) {
                         content.classList.remove('show');
